@@ -5,8 +5,11 @@ import { useWatchlist } from "../hooks/useWatchlist";
 import { movies } from "../data/movies";
 
 const Home = () => {
-  const { watchlist, addToWatchlist, removeFromWatchlist } = useWatchlist();
+  const { watchlist, addToWatchlist, removeFromWatchlist, removeOnWa } = useWatchlist();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+
 
   return (
     <div className="p-6">
@@ -27,6 +30,7 @@ const Home = () => {
           watchlist={watchlist}
           onClose={() => setIsModalOpen(false)}
           onRemove={removeFromWatchlist}
+          removeOnWa={removeOnWa}
         />
       )}
     </div>
